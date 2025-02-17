@@ -1,0 +1,74 @@
+POST http://localhost:3000/signup
+Content-type:application/json
+
+{
+    "name": "raju",
+    "email": "raju12@gmail.com",
+    "password": "raju124"
+}
+###
+
+POST http://localhost:3000/login
+Content-type:application/json
+
+{
+    "name": "raju",
+    "password": "raju124"
+}
+###
+
+
+GET http://localhost:3000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFqdSIsImlhdCI6MTczOTcxNTMzM30.QMll3qydmblEurvnI-3nlBvsaXav_uTBD2ADVdDoYgM
+### 
+
+POST http://localhost:3000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFqdSIsImlhdCI6MTczOTcxNTMzM30.QMll3qydmblEurvnI-3nlBvsaXav_uTBD2ADVdDoYgM
+Content-Type: application/json
+
+{
+    "id":4,
+    "title":"Dinner at 8pm Tue",
+    "content":"Dinner at 8pm next tuesday at hotel with family.",
+    "category":"HOME",
+    "createdAt":"2024-12-14",
+    "updatedAt":"2024-12-14",
+    "pinned":0,
+    "archived":1,
+    "userId":1
+
+}
+
+### 
+
+PUT http://localhost:3000/notes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFqdSIsImlhdCI6MTczOTcxNTMzM30.QMll3qydmblEurvnI-3nlBvsaXav_uTBD2ADVdDoYgM
+Content-Type: application/json
+
+{
+"title": "Create Resume",
+"content":"create resume to apply for jobs within a week",
+"category":"WORK"
+}
+### 
+
+DELETE http://localhost:3000/notes/4
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFqdSIsImlhdCI6MTczOTcxNTMzM30.QMll3qydmblEurvnI-3nlBvsaXav_uTBD2ADVdDoYgM
+###
+
+PATCH http://localhost:3000/notes/1/pin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFqdSIsImlhdCI6MTczOTcxNTMzM30.QMll3qydmblEurvnI-3nlBvsaXav_uTBD2ADVdDoYgM
+Content-Type: application/json
+
+{
+    "pinned": 1 
+}
+###
+
+PATCH http://localhost:3000/notes/1/archive
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicmFqdSIsImlhdCI6MTczOTcxNTMzM30.QMll3qydmblEurvnI-3nlBvsaXav_uTBD2ADVdDoYgM
+Content-Type: application/json
+
+{
+    "archived": 1
+}
