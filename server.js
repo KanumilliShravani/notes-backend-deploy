@@ -5,8 +5,10 @@ const sqlite3 = require('sqlite3')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 const { request } = require('https');
+const cors = require("cors")
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 let db = null;
 const dbPath = path.join(__dirname,"notesdata.db")
